@@ -1,0 +1,29 @@
+.responsive-img {
+  display: flex;
+  margin-right: 8px; /* equivalent to Material-UI's mr: 1 */
+}
+
+@media (min-width: 768px) {
+  .responsive-img {
+    display: none;
+  }
+}
+
+/* App.css */
+.responsive-icon {
+  margin-right: 8px; /* equivalent to mr: 1 in Material UI's spacing system */
+}
+
+/* Hide the icon on extra-small screens */
+@media (max-width: 599px) {
+  .responsive-icon {
+    display: none;
+  }
+}
+
+/* Display the icon as a flex item on medium screens and larger */
+@media (min-width: 600px) {
+  .responsive-icon {
+    display: flex;
+  }
+}
