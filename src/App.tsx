@@ -15,6 +15,27 @@ import './App.css'
 
 const pages = [""];
 const settings = ["Account"];
+const appBarStyle = {
+  backgroundColor: "inherit",
+  marginTop: "20px",
+};
+const titleStyle = {
+  flexGrow: 1,
+  fontWeight: 700,
+  color: "inherit",
+  textDecoration: "none",
+};
+const responsiveTitleStyle = {
+    mr: 2,
+    display: { xs: "flex", md: "none" },
+    flexGrow: 1,
+    fontWeight: 700,
+    color: "inherit",
+    textDecoration: "none",
+}
+
+const titleText = "Pivot Plan";
+
 
 function App() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -41,28 +62,23 @@ function App() {
 
   return (
     <>
-        <AppBar position="static" sx={{ backgroundColor: "inherit",   marginTop: "20px" }}>
+      <AppBar position="static" sx={appBarStyle}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         <img
-            src="/wave.svg"
-            alt="Wave"
+            src="/wolf.png"
+            alt="Wolf"
             className="responsive-icon"
           
-          />          <Typography
+          />          
+          <Typography
             variant="h6"
             noWrap
             component="a"
             href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontWeight: 700,
-              color: "inherit",
-              textDecoration: "none",
-            }}
+            sx={titleStyle}
           >
-            Pivot Plan
+            {titleText}
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -102,8 +118,8 @@ function App() {
             </Menu>
           </Box>
           <img
-            src="/wave.svg"
-            alt="Wave"
+            src="/wolf.svg"
+            alt="Wolf"
             className="responsive-img"
           
           />
@@ -112,16 +128,9 @@ function App() {
             noWrap
             component="a"
             href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontWeight: 700,
-              color: "inherit",
-              textDecoration: "none",
-            }}
+            sx={responsiveTitleStyle}
           >
-            Pivot Plan
+            {titleText}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
@@ -174,7 +183,15 @@ function App() {
     </AppBar>
 
 
-    <h1>Hello</h1>
+    <Container sx={{backgroundColor: "inherit", width: "60%", textAlign: "center", color: "white"}}>
+      <h1 style={{marginBottom: "0px"}}>Adapt To A Routine</h1>
+      <h1 style={{marginTop: "0px", marginBottom: "50px"}}>That is Designed For Your Needs.</h1>
+      <h2 style={{margin: "0px", fontWeight: "normal"}}>Progress Starts With a Strategy.</h2>
+      <h2 style={{margin: "0px", fontWeight: "normal"}}>Start Reaching Your Potential Today.</h2>
+    </Container>
+
+
+
     </>
 
   );

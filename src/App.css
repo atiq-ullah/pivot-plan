@@ -12,6 +12,8 @@
 /* App.css */
 .responsive-icon {
   margin-right: 8px; /* equivalent to mr: 1 in Material UI's spacing system */
+  width: 75px;
+  height: 75px;
 }
 
 /* Hide the icon on extra-small screens */
