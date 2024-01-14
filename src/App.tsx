@@ -1,65 +1,31 @@
-import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
+import Container from "@mui/material/Container";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import './App.css'
 
-const pages = [""];
-const settings = ["Account"];
 const appBarStyle = {
   backgroundColor: "inherit",
   marginTop: "20px",
 };
 const titleStyle = {
   flexGrow: 1,
-  fontWeight: 700,
+  fontWeight: 500,
   color: "inherit",
   textDecoration: "none",
+  fontSize: "4em",
+  fontFamily: "Georgia",
 };
-const responsiveTitleStyle = {
-    mr: 2,
-    display: { xs: "flex", md: "none" },
-    flexGrow: 1,
-    fontWeight: 700,
-    color: "inherit",
-    textDecoration: "none",
-}
 
-const titleText = "Pivot Plan";
-
+const titleText = "PivotPlan".toUpperCase();
+const getPlanText = "Get Full Pivot Plan";
 
 function App() {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-    null
-  );
-
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
   return (
     <>
       <AppBar position="static" sx={appBarStyle}>
@@ -68,7 +34,7 @@ function App() {
         <img
             src="/wolf.png"
             alt="Wolf"
-            className="responsive-icon"
+            className="desktop-logo"
           
           />          
           <Typography
@@ -77,106 +43,19 @@ function App() {
             component="a"
             href="#app-bar-with-responsive-menu"
             sx={titleStyle}
+            className="title"
           >
             {titleText}
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <img
-            src="/wolf.svg"
-            alt="Wolf"
-            className="responsive-img"
           
-          />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={responsiveTitleStyle}
-          >
-            {titleText}
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
-
           <Box sx={{ flexGrow: 0}}>
-          <Tooltip title="Go to cart">
-              <div style={{ border: "2px solid gold", display: "inline", padding: "10px", marginRight: "100px"}} >
-                <span style={{color: "gold"}}>Get Full Pivot Plan</span>
+              <div className="full-plan">
+                <span style={{color: "gold"}}>{getPlanText}</span>
               </div>
-            </Tooltip>
-            <Tooltip title="Go to cart">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <ShoppingCartIcon sx={{ color: "white" }} />
+              <IconButton size="large">
+                <ShoppingCartIcon sx={{ color: "white", fontSize: "3em" }} />
               </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
           </Box>
         </Toolbar>
       </Container>
@@ -184,14 +63,31 @@ function App() {
 
 
     <Container sx={{backgroundColor: "inherit", width: "60%", textAlign: "center", color: "white"}}>
-      <h1 style={{marginBottom: "0px"}}>Adapt To A Routine</h1>
-      <h1 style={{marginTop: "0px", marginBottom: "50px"}}>That is Designed For Your Needs.</h1>
-      <h2 style={{margin: "0px", fontWeight: "normal"}}>Progress Starts With a Strategy.</h2>
-      <h2 style={{margin: "0px", fontWeight: "normal"}}>Start Reaching Your Potential Today.</h2>
+      <h1 className="slogan-top">Adapt To A Routine</h1>
+      <h1 className="slogan-bottom">That is Designed For Your Needs.</h1>
+
+      <div className="sub-heading">
+
+
+      <h2>Progress Starts With a Strategy.</h2>
+      <h2>Start Reaching Your Potential Today.</h2>
+
+      </div>
+
+
+        <Button
+      variant="contained"
+      color="success"
+      startIcon={<IconButton size="medium" sx={{ color: "white" }}><RocketLaunchIcon fontSize="large"/></IconButton>} // Optional: Adds an icon to the button
+      sx={{ 
+        marginTop: '100px',
+        padding: '10px 20px', // Custom padding for larger size
+        fontSize: '1.5em', // Bigger font size
+      }}
+    >
+      Launch
+    </Button>
     </Container>
-
-
-
     </>
 
   );

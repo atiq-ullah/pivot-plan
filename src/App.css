@@ -1,31 +1,53 @@
-.responsive-img {
+.mobile-logo {
   display: flex;
-  margin-right: 8px; /* equivalent to Material-UI's mr: 1 */
+  margin-right: 8px;
+  color: pink;
 }
 
-@media (min-width: 768px) {
-  .responsive-img {
+.desktop-logo {
+  margin-right: 8px;
+}
+
+.desktop-logo, .mobile-logo {
+  width: 175px;
+  height: 175px;
+
+}
+.full-plan {
+ border: 2px solid gold; 
+ padding: 10px;
+ margin-right: 100px;
+ display: inline;
+ font-size: 1.5rem;
+}
+@media screen and (max-width: 1024px) {
+ .full-plan {
+    display: none;
+ }
+}
+
+@media screen and (max-width: 414px) {
+  .title {
     display: none;
   }
 }
 
-/* App.css */
-.responsive-icon {
-  margin-right: 8px; /* equivalent to mr: 1 in Material UI's spacing system */
-  width: 75px;
-  height: 75px;
+.sub-heading h2 {
+ margin: 0;
+ font-weight: normal;
+ font-size: 1.5em;
+ color: #6f7571;
+}
+.slogan-top {
+ margin-bottom: 0; 
+ margin-top: 100px;
 }
 
-/* Hide the icon on extra-small screens */
-@media (max-width: 599px) {
-  .responsive-icon {
-    display: none;
-  }
+.slogan-bottom {
+ margin-bottom: 50px; 
+ margin-top: 0;
 }
-
-/* Display the icon as a flex item on medium screens and larger */
-@media (min-width: 600px) {
-  .responsive-icon {
-    display: flex;
-  }
+.slogan-top, .slogan-bottom {
+ font-size: 2em;
+ font-weight: normal;
 }
